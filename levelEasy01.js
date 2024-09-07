@@ -110,4 +110,22 @@ const reverAString = (str) => {
   // return result[0]
   // }
   // console.log("The minimum value is: ",findMin([2,12,34,120,45,30,3]));
+
+
+  //--------------------------------------------- CHECK A STRING or Number IS PALINDROM OR NOT -------------------------------------------------
+// Question # 04;
+let userInput = prompt("Enter any string");
+function checkPalindrome(){
+let splitUserInput = (userInput.split(""));
+console.log(splitUserInput)
+let reverseUserInput = splitUserInput.reverse()
+console.log(reverseUserInput);
+let joinUserInput = reverseUserInput.join("");
+if(userInput === joinUserInput){
+    return ("It is a palindrome");
+}
+return ("It is not a palindrome")
+}
+console.log(checkPalindrome())
+
   
