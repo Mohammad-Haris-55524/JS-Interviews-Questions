@@ -161,3 +161,51 @@ return element.charAt(0).toUpperCase() + element.slice(1).toLowerCase()
 // let text = "HELLO WORLD";
 // console.log(text.charCodeAt(0)); // ASCII CODE VALUE OF CAPITAL H IS 72 at index/position 0
 // ___________________________________________________________________________________________
+
+
+// ---------------------------------------- CHECK WETHER A CHARACTER IS in UPPER CASE OR LOWER CASE -------------------------------------------
+// Question # 06:
+// METOD # 01 (NORMAL TECHNIQUE BUT THIS NOT WORKS GOOD ON SINGLE DIGIT NUMBER AND SPECIAL CHARATERS )
+// const checkUppercaseOrLowerCase = (char) =>{
+// console.log(char);
+// if(char.length > 1 || typeof char !== "string") {
+//     return false
+// }
+// console.log(typeof char)
+// if(char === char.toUpperCase()){
+//     return "Character is in UPPER CASE"
+// }
+// else{
+//      return "Character is in LOWER CASE"
+// }
+// }
+// console.log(checkUppercaseOrLowerCase("a"))
+
+// METOD # 02 (NORMAL TECHNIQUE BUT THIS NOT WORKS GOOD ON SINGLE DIGIT NUMBER AND SPECIAL CHARATERS )
+const checkUppercaseOrLowerCase = (char) =>{
+  console.log(char);
+  if(char.length > 1) {
+      return false
+  }
+  console.log(char.charCodeAt())
+//___________________________________________________________________________________________________________________________________________
+// Remember
+// && operator ka use isi liye karen gy taky dono conditions true hongi to hi sahe sy condition works kary gi. For exampple 1 pass kar diya
+// to 1 ka ASCII code 47 hota hy to agar && operator laga hoga to woh check kary ga ky 47 lie karta hay 65 sy 90 ky darmain yah nahe. Kiu ky
+// agar || laga di to 47 is less than <= 90 to yah chal gy gi or hamari condition fail hogy gi
+//___________________________________________________________________________________________________________________________________________
+
+  if(char.charCodeAt() >= 65 && char.charCodeAt() <= 90){
+      return "Character is in UPPER CASE"
+  }
+  else if(char.charCodeAt() >= 97 && char.charCodeAt() <= 122){
+       return "Character is in LOWER CASE"
+  }
+  else{
+      return "Neither a Character and nor an UPPER or LOWER case"
+  }
+  }
+  // console.log(checkUppercaseOrLowerCase("A"))
+  // console.log(checkUppercaseOrLowerCase("g"))
+  // console.log(checkUppercaseOrLowerCase("1"))
+  // console.log(checkUppercaseOrLowerCase("%"))
