@@ -209,3 +209,24 @@ const checkUppercaseOrLowerCase = (char) =>{
   // console.log(checkUppercaseOrLowerCase("g"))
   // console.log(checkUppercaseOrLowerCase("1"))
   // console.log(checkUppercaseOrLowerCase("%"))
+
+
+// ------------------------------------------- REPEAT A STRING AS MANY TIMES OF PARAMETER VALUE -------------------------------------------
+// Question # 07:
+const repeatStr = (str, times) =>{
+  // Method # 01 (By using Built in Method =======> repeat())
+  // return times > 0 ? str.repeat(times) : str;
+  
+  // Method # 02 (Without using in Build method)
+  let emptyStr = ""
+  if(times > 0){
+  for(let i = times; i > 0; i --){
+    emptyStr = str + emptyStr
+    // console.log(emptyStr)
+  }}
+  else{
+    return str
+  }
+  return emptyStr
+  }
+  // console.log("Result of Repeated String: ", repeatStr("haris", 4))
