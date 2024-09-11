@@ -230,3 +230,58 @@ const repeatStr = (str, times) =>{
   return emptyStr
   }
   // console.log("Result of Repeated String: ", repeatStr("haris", 4))
+
+
+// ------------------------------------------------ WRITE A FUNCTION TO TURNCATE A STRING ---------------------------------------------------
+// Question # 08:    
+const truncateAStr = (str, times) =>{
+  // Method # 01 (BY USING (SPLIT) AND SPLICE, BECAUSE SPLICE IS AN ARRAY METHOD THAT WHY WE CONVERTED A STRING TO AN ARRAY BY USING SPLIT)
+      // const strToArr = str.split(" ")
+      // const trimmedStr = strToArr.splice(0,times).join(" ")
+      // return trimmedStr + "............."
+      
+  // Method # 02 (BY USING SLICE METHOD CAN BE USED ON ARRAY AS WELL ON STRING ALSO
+      const trimmedStr = str.slice(0, times)
+      return trimmedStr + "............."
+      }
+      console.log(truncateAStr("A quick brown fox jumps over the lazy dog", 7))
+      
+  // ************************************* TRUNCATE A STRING USING DOM (METHOD # 01 BY USING FUNCTION) ****************************************
+      // let toggle = true
+      // function btn(thisValue){
+      // let strElement = document.getElementById('truncateString');
+      // let str = strElement.innerHTML;
+      // let trimmedStr = str.slice(0,14) + ".........."
+      // if(toggle){
+      // strElement.innerHTML = trimmedStr
+      // console.log(strElement, str, trimmedStr)
+      // thisValue.innerHTML = "Toggle On"
+      // toggle = false
+      // }
+      // else{
+      // strElement.innerHTML = "A quick brown fox jumps over the lazy dog"
+      // thisValue.innerHTML = "Toggle Off"
+      // console.log(str,trimmedStr)
+      // toggle = true
+      // }
+      // }
+      
+// ******************************* TRUNCATE A STRING USING DOM (METHOD # 01 BY USING ADD EVENT LISTNER) **************************************
+      let toggle = true
+      let btnText = document.getElementById("toggleBtn")
+      btnText.addEventListener("click", ()=>{
+      let strElement = document.getElementById('truncateString');
+      let str = strElement.innerHTML;
+      let trimmedStr = str.slice(0,14) + ".........."
+      if(toggle){
+      strElement.innerHTML = trimmedStr
+      btnText.innerHTML = "Toggle On"
+      toggle = false
+      }
+      else{
+      strElement.innerHTML = "A quick brown fox jumps over the lazy dog"
+      btnText.innerHTML = "Toggle Off"
+      toggle = true
+      }
+      })
+      
