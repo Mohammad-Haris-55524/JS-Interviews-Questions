@@ -284,4 +284,25 @@ const truncateAStr = (str, times) =>{
       toggle = true
       }
       })
+
+// ------------------------------------------ Write a function to delete all vowels from a sentence -----------------------------------------
+const deleteAllVowels = (str) =>{
+  let newStr = str.toLowerCase().split("")
+  console.log(newStr)
+  let vowels = "aeiouAEIOU";
+  let result = newStr.filter((alphabet,index)=>{
+    // Method # 01 (Short hand technique) (BEST APPROACH)
+    if(!vowels.includes(alphabet)){
+      // console.log(alphabet)
+      return alphabet
+    }
+    // Method # 02 (Long technique)
+    // if(!alphabet.includes('a') && !alphabet.includes('e') && !alphabet.includes('i') && !alphabet.includes('o') && !alphabet.includes('u'))  {
+    // if(!alphabet.includes(vowels[index])){
+    //   return alphabet
+    // }
+  })
+  return result.join("")
+  }
+  console.log(deleteAllVowels('A quick brown fox jumps over the lazy dog'));
       
