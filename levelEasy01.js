@@ -286,6 +286,7 @@ const truncateAStr = (str, times) =>{
       })
 
 // ------------------------------------------ Write a function to delete all vowels from a sentence -----------------------------------------
+// Question # 09: 
 const deleteAllVowels = (str) =>{
   let newStr = str.toLowerCase().split("")
   console.log(newStr)
@@ -303,6 +304,44 @@ const deleteAllVowels = (str) =>{
     // }
   })
   return result.join("")
+}
+console.log(deleteAllVowels('A quick brown fox jumps over the lazy dog'));
+
+
+// --------------------------------------------- WRITE A FUNCTION TO FIND MEAN OF AN ARAAY --------------------------------------------------
+// Question # 10:
+const calculateMean = (arr) => {
+  // Method # 01:-
+  if(arr.length === 0){
+    return 0
   }
-  console.log(deleteAllVowels('A quick brown fox jumps over the lazy dog'));
+  let add = 0;
+  for(let i=0; i <arr.length; i++){
+   add = add + arr[i]
+  }
+  return add/arr.length;
+
+  // Method # 02:-
+  // const result = arr.reduce((currVal,prevVal)=>{
+  //     return currVal = currVal + prevVal
+  // },0)
+  // return  result/arr.length
+
+  // // Method # 03:-
+  // let add=0
+  // arr.map((num)=>{
+  // add = add + num
+  // })
+  // return add/arr.length;
+
+  // Method # 04:-
+//   let add = 0;
+//   arr.forEach((num) => {
+//     add = add + num;
+//   });
+//   return add / arr.length;
+};
+// console.log("Mean: ", calculateMean([-2, -4, -5, 7, 8, 9, 32]));
+// console.log("Mean: ", calculateMean([2, 4, 5, 7, 8, 9, 32]));
+// console.log("Mean: ", calculateMean([]));
       
