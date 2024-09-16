@@ -345,3 +345,39 @@ const calculateMean = (arr) => {
 // console.log("Mean: ", calculateMean([2, 4, 5, 7, 8, 9, 32]));
 // console.log("Mean: ", calculateMean([]));
       
+
+// ------------------------------------- Write a function to find the occurences of vowels from a sentence -----------------------------------
+// Question # 11:
+const occurencesOfVowelsInSentences = (str) =>{
+  let newStr = str.split('')
+  console.log(newStr)
+  console.log(str.length)
+  let vowels = "aeiouA";
+  let obj = {};
+  
+  // // Method # 01 (Long Approach)
+  // let result = newStr.filter((character)=>{
+  //   if(vowels.includes(character)){
+  //     // console.log(vowels)
+  //     console.log(character)
+  //     // return character
+  //   }
+  //   // else{
+  //   //   console.log({vowels},{character})
+  //   //   obj[character] = (obj[character] || 0) + 1
+  //   // }
+  // })
+  // // console.log(obj)
+  // // return obj
+  // // return result.join("")
+  
+  // Method # 01 (Short and Good Approach)
+  let result = newStr.filter((alphabet)=>{
+  if(vowels.includes(alphabet)){
+    console.log(alphabet)
+    obj[alphabet] = (obj[alphabet] || 0) + 1
+  }})
+  return obj
+  }
+
+  console.log(occurencesOfVowelsInSentences('A quick brown fox jumps over the lazy dog'))
