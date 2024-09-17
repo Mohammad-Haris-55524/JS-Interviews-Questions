@@ -346,38 +346,89 @@ const calculateMean = (arr) => {
 // console.log("Mean: ", calculateMean([]));
       
 
+
 // ------------------------------------- Write a function to find the occurences of vowels from a sentence -----------------------------------
-// Question # 11:
+// _____________________________________________ Remember: USE METHOD 02 & 03 & 04 ARE BEST APPROACH _________________________________________
 const occurencesOfVowelsInSentences = (str) =>{
   let newStr = str.split('')
   console.log(newStr)
   console.log(str.length)
-  let vowels = "aeiouA";
+  let vowels = "aeiouAEIOU";
   let obj = {};
   
   // // Method # 01 (Long Approach)
-  // let result = newStr.filter((character)=>{
-  //   if(vowels.includes(character)){
-  //     // console.log(vowels)
-  //     console.log(character)
-  //     // return character
-  //   }
-  //   // else{
-  //   //   console.log({vowels},{character})
-  //   //   obj[character] = (obj[character] || 0) + 1
-  //   // }
-  // })
-  // // console.log(obj)
-  // // return obj
-  // // return result.join("")
-  
-  // Method # 01 (Short and Good Approach)
-  let result = newStr.filter((alphabet)=>{
-  if(vowels.includes(alphabet)){
-    console.log(alphabet)
-    obj[alphabet] = (obj[alphabet] || 0) + 1
-  }})
+  let result = newStr.filter((character)=>{
+    if(!vowels.includes(character)){
+      // console.log(vowels)
+      // console.log(character)
+      return character
+    }
+    else{
+      // console.log({vowels},{character})
+      obj[character] = (obj[character] || 0) + 1
+    }})
   return obj
   }
-
-  console.log(occurencesOfVowelsInSentences('A quick brown fox jumps over the lazy dog'))
+  // console.log(occurencesOfVowelsInSentences('A quick brown fOx jumps over the lazy dog'))
+  
+  
+  // ___________________________________________________________________________________________________________________________________________
+  // Method # 02 (Short Approach using inbuilt methods like filter and split)
+  // let result = newStr.filter((alphabet)=>{
+  // if(vowels.includes(alphabet)){
+  //   console.log(alphabet,vowels)
+  //   obj[alphabet] = (obj[alphabet] || 0) + 1
+  // }})
+  // let values= Object.entries(obj);
+  // for(let value of values){
+  //   console.log("Occurence of ",value[0] , " : " ,value[1])
+  // }
+  // return obj
+  // }
+  // console.log(occurencesOfVowelsInSentences('A quick brown fOx jumps over the lazy dog'))
+  
+  
+  // ___________________________________________________________________________________________________________________________________________
+  // Method # 03 (Best approach without using any built in Method like filter and split inspite of filter i will use for loop for iteration )
+  // for(let alphabet of str){
+  // // let result = newStr.filter((alphabet)=>{
+  //   if(vowels.includes(alphabet)){
+  //     // console.log(alphabet,vowels)
+  //     obj[alphabet] = (obj[alphabet] || 0) + 1
+  //   }}
+  //   let values= Object.entries(obj);
+  //   for(let value of values){
+  //     console.log("Occurence of ",value[0] , " : " ,value[1])
+  //   }
+  //   return obj
+  // }
+  // console.log(occurencesOfVowelsInSentences('A quick brown fOx jumps over the lazy dog'))
+  
+  // ___________________________________________________________________________________________________________________________________________
+  // Method # 04 (Best apprach without using any built in Method)
+  // function countVowels(sentence) {
+  //   // Define vowels
+  //   const vowels = "aeiouAEIOU";
+  //   // Initialize an object to store vowel occurrences
+  //   const objForVowelCount = {};
+  //   // Loop through each character in the sentence
+  //   for (let alphabet of sentence) {
+  //       if (vowels.includes(alphabet)) {
+  // // 1st time else case par gy ga kiu ky object(objForVowelCount) my isy kuch nahe mily ga yani undefined mily ga kiu ky 1st time object empty hoga
+  // // to else case my gy ga or jo vowel isy mila hoga includes waly method ky andar uss ki key bana kar uss my 1 rakhwa dy ga phr jab next alphabet 
+  // // ko check kary ga uss time agar key mojood hogi to undefined ki jagah true mil gy ga or usi key ki last existing value my 1 plus kar dy ga
+  // // or agar key dobara sy nahe milti object my to dobara sy else case my jaa kar uss vowel ky name ki key bana dy ga or 1 value set kara dy ga
+  //         // console.log(objForVowelCount[alphabet])
+  //         if(objForVowelCount[alphabet]){
+  //           console.log("IF")
+  //           objForVowelCount[alphabet] += 1
+  //         }
+  //         else{
+  //           console.log("ELSE")
+  //           objForVowelCount[alphabet] = 1
+  //         }}}
+  //   return objForVowelCount;
+  // }
+  // // const sentence = "This is an example sentence.";
+  // // console.log(countVowels(sentence));
+  // ___________________________________________________________________________________________________________________________________________
