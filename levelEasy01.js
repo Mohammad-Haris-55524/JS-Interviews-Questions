@@ -348,6 +348,7 @@ const calculateMean = (arr) => {
 
 
 // ------------------------------------- Write a function to find the occurences of vowels from a sentence -----------------------------------
+// Question # 11
 // _____________________________________________ Remember: USE METHOD 02 & 03 & 04 ARE BEST APPROACH _________________________________________
 const occurencesOfVowelsInSentences = (str) =>{
   let newStr = str.split('')
@@ -432,3 +433,16 @@ const occurencesOfVowelsInSentences = (str) =>{
   // // const sentence = "This is an example sentence.";
   // // console.log(countVowels(sentence));
   // ___________________________________________________________________________________________________________________________________________
+
+// ---------------------------- Write a function to generate an Array of numbers (Number can be postitve and nagetive)--------------------------
+// Question # 12
+const generateNumberArray = (start, range) =>{
+  let arr = [];
+  for(let i = start; i <= range; i++){
+    arr.push(i)
+  }
+  console.log(arr)
+  }
+  console.log(generateNumberArray(0, 0))
+  // console.log(generateNumberArray(1, 6))
+  // console.log(generateNumberArray(-6, 6))
