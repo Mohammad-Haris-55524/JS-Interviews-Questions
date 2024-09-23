@@ -42,3 +42,22 @@ for(let i=0; i < strConvertedIntoArr.length; i++){
   }
 }
 // console.log("The greatest String is: ",result);
+
+
+// ------------------------------------------------ Find the Longest string in an Array ----------------------------------------------------
+// var arr = [
+//     'Web',
+//     'Development',
+//     'Tutorial'
+//   ];
+//   let lgth = 0;
+//   let longest;
+
+//   for (var i = 0; i < arr.length; i++) {
+//     // console.log(arr[i])
+//     if (arr[i].length > lgth) { //1) web.length = 3 > 0 = (true) go inside block (1-b) Development.length = 11 > 0 = (true) go inside block (1-c) Tutorial.length = 8 > 0 = (false) Will not go inside block hence Development is the greatest string in length
+//       lgth = arr[i].length; //2)  lgth = 3 (web.length) (2-b) lgth = 11 (Development.length)
+//       longest = arr[i]; // 3) longest = web  (3-c) longest = Development
+//     }
+//   }
+//   console.log(longest);
