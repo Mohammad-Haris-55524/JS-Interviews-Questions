@@ -27,8 +27,8 @@ const removeDuplicatesFromStrings = (str) =>{
 }
 // console.log(removeDuplicatesFromStrings("Mohammad Haris"));
 
-// Question: ****************************************Find the Longest string in a STRING **************************************************
-// Question # 03:
+// ****************************************Find the Longest string in a STRING **************************************************
+// Question # 03
 let str = 'My name is Mohammad Haris'
 let strConvertedIntoArr = str.split(" ");
 console.log(strConvertedIntoArr);
@@ -45,6 +45,7 @@ for(let i=0; i < strConvertedIntoArr.length; i++){
 
 
 // ------------------------------------------------ Find the Longest string in an Array ----------------------------------------------------
+// Question # 04
 // var arr = [
 //     'Web',
 //     'Development',
@@ -61,3 +62,15 @@ for(let i=0; i < strConvertedIntoArr.length; i++){
 //     }
 //   }
 //   console.log(longest);
+
+
+// *******************************************Find the Shortest string in an ARRAY************************************************
+// Question # 05
+// const subjects = ["Biology", "English", "Physics", "Maths", "Chemistry"];
+// // const str = "My name is mohammad haris";
+// // const subjects = str.split(' ');
+// // console.log(subjects)
+// const reducedSubjects = subjects.reduce(function(a, b) {
+//   return a.length > b.length ? a : b;
+// });
+// console.log(reducedSubjects);
