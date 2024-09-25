@@ -74,3 +74,32 @@ for(let i=0; i < strConvertedIntoArr.length; i++){
 //   return a.length > b.length ? a : b;
 // });
 // console.log(reducedSubjects);
+
+
+// ---------------------------------------- CHECK IF A GIVEN STRING STARTS WITH A SPECIFIC SUBSTRING -----------------------------------------
+// Question # 06
+// METHOD # 01
+// const checkGivenString = (str,subString) =>{
+// console.log(str,subString);
+// return str.toLowerCase().startsWith(subString.toLowerCase())
+// }
+// console.log(checkGivenString("Hello World", "hello"));
+
+// REMEMBER:
+// startsWith() is a String method and it is case sensetive. It takes 2 paramter 1 is string and another is substring that can be checked
+// wether a substring is present in string or not.
+// The startsWith() method returns true if a string starts with a specified string.
+// Otherwise it returns false.
+// string.startsWith(searchValue, start)
+// let text = "Hello world, welcome to the universe.";
+// console.log(text.startsWith("Hello", 0));
+// console.log(text.startsWith("Hello", 1));
+// console.log(text.startsWith("to", 21));
+
+// METHOD # 02:
+const checkGivenString = (str,subString) =>{
+  console.log(str,subString);
+  return str.toLowerCase().slice(0,subString.length) === subString.toLowerCase()
+  //str.slice(0,subString.length) ===> subString.length = 5 ==> str.slice(0,5) Hello === hello (convert to lowercase)
+}
+// console.log(checkGivenString("Hello World", "hello"));
