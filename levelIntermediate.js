@@ -103,3 +103,36 @@ const checkGivenString = (str,subString) =>{
   //str.slice(0,subString.length) ===> subString.length = 5 ==> str.slice(0,5) Hello === hello (convert to lowercase)
 }
 // console.log(checkGivenString("Hello World", "hello"));
+
+
+// --------------------------------------------- WRITE A FUNCTION TO FIND MEDIAN OF AN ARAAY --------------------------------------------------
+const findMedianInArray = (arr) =>{
+  // STEP # 01 (CHECK IF ARRAY LENGTH = 0 THEN STOP CODE EXECUTION)
+  if(arr.length === 0){
+    return "No Array found !"
+  }
+  // STEP # 02 (SORT AN ARRAY IN ASCENDING ORDER TO FIND MEDIAN)
+  const sortedArr = arr.sort((a,b)=>{
+    return a - b
+  })
+  console.log(sortedArr)
+  let midPoint = Math.round(sortedArr.length / 2) 
+  console.log("Midpoint: ",midPoint)// Target the middle value of sorted arr and its value further be used to find median for ODD & EVEN array.
+  
+  // STEP # 02 (MEDIAN: FOR ODD ARRAY LENGTH)
+  if(sortedArr.length % 2 === 1){
+  console.log("ODD")
+  return sortedArr[midPoint] - 1 //Yaad rahy sortedArr[midpoint] ky andar jab midpoint ki value pass karein gy to yah INDEX ky lihaaz sy value 
+  // utha kar ly ga sortedArr my sy to woh value 1 agay ki hogi kiu ky ham ny midpoint my .length kar ky sortedArr ki value nikali the to isi 
+  // liye ham -1 kar dein gy taky 1 step pechy ki value ly 
+  }
+  // (MEDIAN: FOR EVEN ARRAY LENGTH)
+  else{
+  console.log("EVEN")
+  let mode = (sortedArr[midPoint] - 1) + ((sortedArr[midPoint] - 1) + 1) // -1 array ki length sy 1 value pechy ki value ko get karny ky liye use kiya hy 
+  return (mode / 2)
+  }
+  }
+  // console.log("Median: ",findMedianInArray([4, 2, 7, 5, 9, 8, 9, 42,9]));
+  // console.log("Median: ",findMedianInArray([]));
+  
