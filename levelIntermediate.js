@@ -135,4 +135,70 @@ const findMedianInArray = (arr) =>{
   }
   // console.log("Median: ",findMedianInArray([4, 2, 7, 5, 9, 8, 9, 42,9]));
   // console.log("Median: ",findMedianInArray([]));
+
   
+// ------------------------------------------------------------- PASSWORD GENERATOR ---------------------------------------------------------
+// Requirements !
+// 1) Password should not start with a number
+// 2) Minimum legnth of password should be 8.
+// 3) Password must contain 1 Uppercase letter, 1 Lowercase letter and 1 Digit.
+// 4) The function should return true if all the Requirements meets all the creiteria.
+
+// ------------------------------------------------- TECHNIQUE # 01 WITHOUT USING ASCII CODE -------------------------------------------------
+
+//**************************** Method # 01 (Short Approach but doesn't fullfills specaial character validation ********************************
+// function passwordGenerator(password){
+// let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+// let lowerCase = "abcdefghijklmnopqrstuvwxyz"
+// let number = "0123456789";
+// let hasLowerCase = false;
+// let hasUpperCase = false;
+// let hasNumber = false;
+
+// // Checking Length of password should not be less than 8
+// if(password.length <= 8){
+//   return "Password should not be less than 8 characters !"
+// }
+
+// // Check if the first character is a number
+// if(number.includes(password.charAt(0))){
+//   return "Password should not start from number !"
+// }
+// // Checking foe uppercase && lowercase && numbers if all conditions gets true the password validation will be sucessfull !
+// for(let char of password){
+// if (upperCase.includes(char)){
+//   hasUpperCase = true 
+// }
+// else if(lowerCase.includes(char)){
+//   hasLowerCase = true
+// }
+// else if(number.includes(char)){
+//   hasNumber = true
+//   // console.log({number},{char},{hasNumber})
+// }
+// }
+// console.log({hasLowerCase},{hasUpperCase},{hasNumber})
+
+// // _________________________________ Now from here onwards we are checking conditions for a invalid password ________________________________ 
+
+// // Method # 01(Consise method to check if any one if the condtions matches the password should be invalid, But through this method we are unable 
+// // to guide the user which mistake he is making while creating password  )
+// // if(!hasLowerCase || !hasUpperCase || !hasNumber ){
+// //   return "Enter a valid password !"
+// // }
+// //Method # 02 (Long but best method to check if any one if the condtions matches the password should be invalid, Because through this method
+// // we are able to guide the USER which mistake he is making while creating password  )
+
+// if(!hasLowerCase){ return "Password should contain at least 1 lowercase character !"}
+// else if(!hasUpperCase){ return "Password should contain at least 1 uppercase character !"}
+// else if(!hasNumber){ return "Password should contain at least 1 number !"}
+// else{
+//   console.log("Password Successfull ...")
+//   return true
+// }
+// }
+// console.log(passwordGenerator("Aries"))
+// console.log(passwordGenerator("1AriesHaris"))
+// console.log(passwordGenerator("AriesHaris1"))
+
+
