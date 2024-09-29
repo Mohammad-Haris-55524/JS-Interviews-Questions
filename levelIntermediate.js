@@ -106,6 +106,7 @@ const checkGivenString = (str,subString) =>{
 
 
 // --------------------------------------------- WRITE A FUNCTION TO FIND MEDIAN OF AN ARAAY --------------------------------------------------
+// Question # 07
 const findMedianInArray = (arr) =>{
   // STEP # 01 (CHECK IF ARRAY LENGTH = 0 THEN STOP CODE EXECUTION)
   if(arr.length === 0){
@@ -144,8 +145,8 @@ const findMedianInArray = (arr) =>{
 // 3) Password must contain 1 Uppercase letter, 1 Lowercase letter and 1 Digit.
 // 4) The function should return true if all the Requirements meets all the creiteria.
 
+// Question # 08
 // ------------------------------------------------- TECHNIQUE # 01 WITHOUT USING ASCII CODE -------------------------------------------------
-
 //**************************** Method # 01 (Short Approach but doesn't fullfills specaial character validation ********************************
 // function passwordGenerator(password){
 // let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -201,4 +202,77 @@ const findMedianInArray = (arr) =>{
 // console.log(passwordGenerator("1AriesHaris"))
 // console.log(passwordGenerator("AriesHaris1"))
 
+// Question # 08(Part 02)
+// --------------------------------------------------- TECHNIQUE # 02 (BY USING ASCII CODE) --------------------------------------------------
 
+//***************************** Method # 02 (Best Approach BCZ it fullfills specaial character validation too) ********************************
+// Requirements !
+// 1) Password should not start with a number
+// 2) Minimum length of password should be more than that 12 character .
+// 3) Password must contain 1 Uppercase letter, 1 Lowercase letter and 1 Digit.
+// 4) Password must also contain 1 special character also. 
+// 5) The function should return true if all the Requirements meets all the creiteria.
+
+const passwordGenerator = (password) =>{
+  let containUppercase = false;
+  let containLowercase = false;
+  let containNumbers = false;
+  let containSpecialCharacter = false;
+  // __________________________________________________________________________________________________________________________________________
+  // I have created these variables to avoid code repeatation while checking condition for password should not start from number OR special character.
+  let numbersAsciiCode = password.charCodeAt(0) >= 48 && password.charCodeAt(0) <= 57;
+  let specialCharacterAsciiCodes = (password.charCodeAt(0) >= 21 && password.charCodeAt(0) <= 47) || 
+  (password.charCodeAt(0) >= 58 && password.charCodeAt(0) <= 64) || 
+  (password.charCodeAt(0) >= 91 && password.charCodeAt(0) <= 96)
+  console.log({specialCharacterAsciiCodes}, {numbersAsciiCode})
+  
+  // Checking that Password length should be more than 12 characters. 
+  if(password.length <= 12){
+  return "Password should be more than 12 character !"
+  }
+  // Checking that Password should not start from Number or any Special Character. 
+  if(numbersAsciiCode || specialCharacterAsciiCodes){
+    // console.log(password.charCodeAt(0), password.charAt(0))
+  return "Password Should not start from a number or a Special Character !"
+  }
+  // __________________________________________________________________________________________________________________________________________
+  // Checking condition that password should atleast contain 1 Uppercase, 1 lowercase, 1 character, and 1 number.
+  for(let char of password){
+  // Checking for Uppercase
+  if(char.charCodeAt(0) >= 65 && char.charCodeAt(0) <= 90){
+    // console.log({char})
+    containUppercase = true
+  }
+  // Checking for Lowercase
+  else if(char.charCodeAt(0) >= 97 && char.charCodeAt(0) <= 122){
+    // console.log({char})
+    containLowercase = true
+  }
+  // Checking for numbers
+  else if(char.charCodeAt(0) >= 48 && char.charCodeAt(0) <= 57){
+    // console.log({char})
+    containNumbers = true
+  }
+  // Checking for special Character
+  else if((char.charCodeAt(0) >= 21 && char.charCodeAt(0) <= 47) || (char.charCodeAt(0) >= 58 && char.charCodeAt(0) <= 64) || 
+  (char.charCodeAt(0) >= 91 && char.charCodeAt(0) <= 96)){
+    // console.log({char})
+    containSpecialCharacter = true
+  }}
+  console.log({containLowercase},{containUppercase},{containNumbers},{containSpecialCharacter})
+  // __________________________________________________________________________________________________________________________________________
+  // Checking if any of the above condition doesn't match we should show a meaningfull message to a user so that he could correct his mistake 
+  // while creating password.
+  if(!containLowercase) return "Password should contain at least 1 lowercase character !"
+  else if(!containUppercase) return "Password should contain at least 1 uppercase character !"
+  else if(!containNumbers) return "Password should contain at least 1 number !"
+  else if(!containSpecialCharacter) return "Password should contain at least 1 character !"
+  else{
+    console.log("Password is VALID ......")
+    return true
+  }
+  }
+  // console.log(passwordGenerator('!AriesH@1ari0s'))
+  // console.log(passwordGenerator('2AriesH@1ari0s'))
+  console.log(passwordGenerator('AriesH@ari12s'))
+  
