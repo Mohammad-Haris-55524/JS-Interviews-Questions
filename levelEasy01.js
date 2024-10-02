@@ -446,3 +446,28 @@ const generateNumberArray = (start, range) =>{
   console.log(generateNumberArray(0, 0))
   // console.log(generateNumberArray(1, 6))
   // console.log(generateNumberArray(-6, 6))
+
+// --------------------- Write a function for grouping an object by a specific property (E.g: group by role, gender etc) ----------------------
+// Question # 13
+function groupObjectByRole(users) {
+  let newObj = {}
+  for(let item of users){
+  if(newObj[item.role]){
+    newObj[item.role].push(item)
+  }
+  else{
+    newObj[item.role] = []
+    newObj[item.role].push(item)
+  }
+  }
+  // console.log(newObj)
+  return newObj
+  }
+  console.log(groupObjectByRole([
+    {name: "Mohammad Haris", id: 55524, role: "Frontend developer"},
+    {name: "Ali haider", id: 21234, role: "Software developer"},
+    {name: "Mohammad Awais", id: 12344, role: "Frontend developer"},
+    {name: "Mohammad shoaib", id: 454234, role: "Software developer"},
+    {name: "Zain ahmed khan", id: 55525, role: "Backend developer"}
+   ]))
+  
