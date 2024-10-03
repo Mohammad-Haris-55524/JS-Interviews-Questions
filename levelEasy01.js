@@ -470,4 +470,17 @@ function groupObjectByRole(users) {
     {name: "Mohammad shoaib", id: 454234, role: "Software developer"},
     {name: "Zain ahmed khan", id: 55525, role: "Backend developer"}
    ]))
+
+
+   // -------------------------------------------- Write a function to generate Random HEX color ------------------------------------------------
+const generateRandomHexColor = () =>{
+const randomHexCode = `#${(Math.random().toFixed(6).toString())}`
+// console.log(randomHexColor.slice(3))
+const convertRandomHexCodeIntoColor = randomHexCode.slice(3)
+console.log(convertRandomHexCodeIntoColor)
+let bodyElement = document.getElementsByTagName('body')
+bodyElement.style.backgroundColor = convertRandomHexCodeIntoColor
+console.log(bodyElement)
+}
+console.log(generateRandomHexColor())
   
