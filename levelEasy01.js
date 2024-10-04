@@ -472,15 +472,30 @@ function groupObjectByRole(users) {
    ]))
 
 
-   // -------------------------------------------- Write a function to generate Random HEX color ------------------------------------------------
-const generateRandomHexColor = () =>{
-const randomHexCode = `#${(Math.random().toFixed(6).toString())}`
-// console.log(randomHexColor.slice(3))
-const convertRandomHexCodeIntoColor = randomHexCode.slice(3)
-console.log(convertRandomHexCodeIntoColor)
-let bodyElement = document.getElementsByTagName('body')
-bodyElement.style.backgroundColor = convertRandomHexCodeIntoColor
-console.log(bodyElement)
+// -------------------------------------------- Write a function to generate Random HEX color ------------------------------------------------
+// Question # 14
+// Method # 01 (By using Function technique)
+const generateRandomHexColorAndChangeBgColor = () =>{
+  console.log("Clicled !")
+// ___________________________________________________________________________________________________________________________________________
+// toString(16): Iss method ky andar 16 pass karny sy yah hoga yah jo random number hoga 1 to woh string my change hogy ga sath my hexaDecimal
+// value bhe convert kar dy Mathd.random() ky numbers ko.
+// padEnd(6,0) Iss ky andar (6,0) isi liye pass kiya hy ky agar kabhe random number ki length 4-5 genrate hogy to yah uss ki length ko 6 number 
+// tak zabardsti poucha dy uss ky agay utnay 0 laga kar jab tak randomHexCode ki length 6 nahe hojati utny 0 laga do kiu ky hex color my 6 num hoty han 
+// ___________________________________________________________________________________________________________________________________________
+  const randomHexCode = `#${(Math.random().toString(16).slice(2,8).padEnd(6,0))}`
+  let bodyElement = document.getElementsByTagName('body')
+  bodyElement[0].style.backgroundColor = randomHexCode
+  // console.log(bodyElement)
 }
-console.log(generateRandomHexColor())
+
+// // Method # 02 (By using AddEventListner)
+// document.getElementById('changeBgColor').addEventListener('click', ()=>{
+// console.log("Clicled !")
+// const randomHexCode = `#${(Math.random().toString(16).slice(2,8).padEnd(6,0))}`
+// console.log(randomHexCode)
+// let bodyElement = document.getElementsByTagName('body')
+// bodyElement[0].style.backgroundColor = randomHexCode
+// console.log(bodyElement)
+// })
   
