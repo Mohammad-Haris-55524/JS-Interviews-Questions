@@ -499,3 +499,34 @@ const generateRandomHexColorAndChangeBgColor = () =>{
 // console.log(bodyElement)
 // })
   
+
+// -------------------------------------------- Write a function to CHECK the OBJECT EMPTINESS ------------------------------------------------
+// Question # 15
+const checkObjectEmptiness = (obj) =>{
+  // --------------------------------------- Method # 01 : (By using hasOwnProperty (Object method)) -------------------------------------------
+  // Remember: For object itertion we always use FOR IN LOOP. This loop provides us the keys present in an object. 
+  // for(let key in obj){
+  // console.log(key)
+  // // The hasOwnProperty() method returns TRUE if the specified property is a direct property of the object — even if the value is null or undefined
+  // // (Has own property): Will check that the object does have the key inside it or not. If provided key exists it will return TRUE else FALSE 
+  // // console.log(obj.hasOwnProperty(key))
+  // if(obj.hasOwnProperty(key)){
+  //   return 'Object has key and value'
+  // }
+  // }
+  // return 'Object is empty !'
+  
+  
+  // --------------------------------- Method # 02 : (Using Object.keys method while checking the length of keys) -------------------------------
+  console.log(Object.keys(obj).length);
+  if(Object.keys(obj).length > 0){
+     return 'Object has key and value'
+  }
+  return 'Object is empty !'
+  }
+  console.log(checkObjectEmptiness({})) //'Object is empty!'
+  console.log(checkObjectEmptiness({'': 123})) //'Object is empty!'
+  console.log(checkObjectEmptiness({id: 55524})) //'Object has key and value '
+  console.log(checkObjectEmptiness({id: null})) //'Object has key and value '
+  console.log(checkObjectEmptiness({id: undefined})) //'Object has key and value '
+  console.log(checkObjectEmptiness({id: ''})) //'Object has key and value '
