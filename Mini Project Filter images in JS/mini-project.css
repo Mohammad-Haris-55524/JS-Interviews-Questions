@@ -1,0 +1,67 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+}
+nav ul {
+
+    display: flex;
+    gap: 4rem;
+}
+nav ul li {
+    font-size: 1.3em;
+    list-style: none;
+    cursor: pointer;
+}
+
+section {
+    /* border: 2px solid red; */
+    margin: auto;
+    display: flex;
+    max-width: 90%;
+
+}
+
+.nature-images>img,
+.animal-images>img,
+.bird-images>img {
+    width: 100%;
+    height: fit-content;
+    object-fit: cover;
+    padding: 0.5rem;
+    filter: drop-shadow(7px 4px 11px #749de7);
+    animation: myAnim 2s linear 0s 1 normal none;
+}
+
+.animal-images,
+.nature-images,
+.bird-images {
+    
+    /* border: 2px solid black; */
+    max-width: 33%;
+    padding: 1rem;
+    /* display: none; */
+}
+
+
+@keyframes myAnim {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0.2;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
