@@ -507,9 +507,9 @@ const checkObjectEmptiness = (obj) =>{
   // Remember: For object itertion we always use FOR IN LOOP. This loop provides us the keys present in an object. 
   // for(let key in obj){
   // console.log(key)
-  // // The hasOwnProperty() method returns TRUE if the specified property is a direct property of the object — even if the value is null or undefined
-  // // (Has own property): Will check that the object does have the key inside it or not. If provided key exists it will return TRUE else FALSE 
-  // // console.log(obj.hasOwnProperty(key))
+// The hasOwnProperty() method returns TRUE if the specified property is a direct property of the object — even if the value is null or undefined
+// (Has own property): Will check that the object does have the key inside it or not. If provided key exists it will return TRUE else FALSE 
+// // console.log(obj.hasOwnProperty(key))
   // if(obj.hasOwnProperty(key)){
   //   return 'Object has key and value'
   // }
@@ -530,3 +530,32 @@ const checkObjectEmptiness = (obj) =>{
   console.log(checkObjectEmptiness({id: null})) //'Object has key and value '
   console.log(checkObjectEmptiness({id: undefined})) //'Object has key and value '
   console.log(checkObjectEmptiness({id: ''})) //'Object has key and value '
+
+
+
+// ----------------------------------------------Write a Function to convert an OBJECT into and Array -----------------------------------------
+// Question # 16
+const convertObjectToArray = (obj) =>{
+
+//(1) Converting an Object into an Array (Object.entries())
+  // Object.enteries: Yah method Object ko Array my convert kar dy ga kuch iss trha ky object ki keys ko array ki keys sy replace kar dy ga. Ap ko 
+  // yad hoga array my indexs hoty thy 0, 1 etc lekin yah method object ki keys ko array ki keys bana dy ga or sath my Properties ko index ki values
+  // ky tor par set karwa dy ga. Iss method sy milna wala Array hamesha multidimensional array hoga or ham multidimensional array ko 1D Array my
+  // convert kar lein gy just by using Flat method (Yaad rahy flat method array ka method hay)
+  const objToArray = Object.entries(obj)
+  console.log(objToArray)
+  // Convert Multidimensional Array into 1D Array: (Flat method)
+  const singleDimensionalArrOrFlatenningAnArray = objToArray.flat()
+  console.log(singleDimensionalArrOrFlatenningAnArray)
+  
+  //(2) Converting an Array into an Object Object.fromEntries()
+  // fromEntries: Yah Object ka method Array ko convert kar dy ga aik Object ky andar
+  const arrayToObject = Object.fromEntries(objToArray)
+  console.log(arrayToObject)
+  }
+  
+convertObjectToArray(
+    {"First Name" : "Mohammad Haris",
+      id: 55524,
+      gender: "Male"}
+    )
