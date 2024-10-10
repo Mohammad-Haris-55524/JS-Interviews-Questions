@@ -553,9 +553,15 @@ const convertObjectToArray = (obj) =>{
   const arrayToObject = Object.fromEntries(objToArray)
   console.log(arrayToObject)
   }
-  
-convertObjectToArray(
-    {"First Name" : "Mohammad Haris",
-      id: 55524,
-      gender: "Male"}
-    )
+// convertObjectToArray(
+//     {"First Name" : "Mohammad Haris",
+//       id: 55524,
+//       gender: "Male"}
+//     )
+
+// -------------------------------------------------- Write a Function to Calculate Intrest --------------------------------------------------
+const calculateSimpleIntrest = (principleAmount,rateOfIntrestPerAnum,timeInYear) =>{
+  const simpleIntrest = (principleAmount * rateOfIntrestPerAnum * timeInYear) / 100
+  return simpleIntrest
+  }
+  console.log("Simple Intrest: ",calculateSimpleIntrest(1000,5,3))
