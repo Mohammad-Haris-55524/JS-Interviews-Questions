@@ -564,4 +564,32 @@ const calculateSimpleIntrest = (principleAmount,rateOfIntrestPerAnum,timeInYear)
   const simpleIntrest = (principleAmount * rateOfIntrestPerAnum * timeInYear) / 100
   return simpleIntrest
   }
-  console.log("Simple Intrest: ",calculateSimpleIntrest(1000,5,3))
+  // console.log("Simple Intrest: ",calculateSimpleIntrest(1000,5,3))
+
+
+// ----------------- Write a Function to Calculate SQUARE of all given numbers in an array and then calculate the sum of Array ----------------
+const calculateSquareOfArray = (arr) =>{
+  console.log(arr)
+  // Method # 01 (Phely map laga kar Array ka square nikala hy uss ky baad reduce method sy add karwaya hy) (LONG METHOD)
+  const squareOfArr = arr.map((val)=> val * val)
+  return sumOfSquareArr = squareOfArr.reduce((prevVal,currentVal)=>prevVal + currentVal)
+  
+  // Method # 02 (Direct map laga kar reduce method laga raha hon 1 liner (2 higher order methods ko aik sath use karny ko METHOD CHAINING bolty han)
+  // const squareAndSumOfArr = arr.map((value)=> value * value).reduce((prevVal,currVal) => prevVal + currVal)
+  // return squareAndSumOfArr;
+  
+  // Method # 03 (Sirf reduce sy dono operation kar ky dekhao add or sum 1 hi time par)
+  // const squareAndSumOfArr = arr.reduce((prevVal,currVal) => {
+  //   return prevVal = prevVal + (currVal * currVal)
+  // })
+  // return squareAndSumOfArr;
+  
+  // // Method # 04 (Avoid using any build in methods)
+  // let sumOfArr = 0
+  // for(let  i = 0; i < arr.length; i++){
+  // sumOfArr = sumOfArr + (arr[i] * arr[i])
+  // }
+  // return sumOfArr
+  }
+  
+  console.log("Sum of array after sqauring the array numbers: ", calculateSquareOfArray([1,2,3])) 
