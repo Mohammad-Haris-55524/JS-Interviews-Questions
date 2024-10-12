@@ -274,5 +274,28 @@ const passwordGenerator = (password) =>{
   }
   // console.log(passwordGenerator('!AriesH@1ari0s'))
   // console.log(passwordGenerator('2AriesH@1ari0s'))
-  console.log(passwordGenerator('AriesH@ari12s'))
+  // console.log(passwordGenerator('AriesH@ari12s'))
+
+
+//------------------------------------- Write a Function to Calculate Numbers of days between 2 DATEs ----------------------------------------
+// Question # 09
+  function calculateDaysBetweenDates(date1, date2) {
+    // Convert the input strings to Date objects
+    const firstDate = new Date(date1);
+    const secondDate = new Date(date2);
+
+    // Get the time difference in milliseconds
+    const timeDifference = Math.abs(secondDate - firstDate);
+
+    // Convert time difference from milliseconds to days
+    const daysDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
+
+    return daysDifference;
+}
+
+// Example usage:
+const startDate = "2024-10-01";
+const endDate = "2024-10-12";
+console.log(calculateDaysBetweenDates(startDate, endDate)); // Output: 11
+
   
