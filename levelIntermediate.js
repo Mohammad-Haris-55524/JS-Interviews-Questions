@@ -277,25 +277,31 @@ const passwordGenerator = (password) =>{
   // console.log(passwordGenerator('AriesH@ari12s'))
 
 
-//------------------------------------- Write a Function to Calculate Numbers of days between 2 DATEs ----------------------------------------
-// Question # 09
-  function calculateDaysBetweenDates(date1, date2) {
-    // Convert the input strings to Date objects
-    const firstDate = new Date(date1);
-    const secondDate = new Date(date2);
-
-    // Get the time difference in milliseconds
-    const timeDifference = Math.abs(secondDate - firstDate);
-
-    // Convert time difference from milliseconds to days
-    const daysDifference = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
-
-    return daysDifference;
-}
-
-// Example usage:
-const startDate = "2024-10-01";
-const endDate = "2024-10-12";
-console.log(calculateDaysBetweenDates(startDate, endDate)); // Output: 11
+  // -------------------------------------- Write a Function to Calculate Numbers of days between 2 dates ---------------------------------------
+  // Question # 09
+const findDaysBetweenTwoDates = (strtDate, endDate) =>{
+  // Method # 01 (Long approach)
+  // 1) Convert Both dates into Milliseconds
+  let date1 = new Date(strtDate).getTime()
+  let date2 = new Date(endDate).getTime()
+  
+  // 2) Find the difference between both millisecond of Date1 & Date2 then we will use Maths.abs taaky agar dates ka difference minus(-) my aagy
+  //  to Math.abs() laga kar minus (-) nishan ko remove kar dein gy.
+  let differnceBetweenTwoDates = Math.abs(date2 - date1)
+  // console.log(differnceBetweenTwoDates)
+  // 3) Converting the total difference into no of days by using below conversion. 
+  // 1 days = 24 hrs
+  // 24 hrs = 60 minute
+  // 1 min = 60 seconds
+  // 1 second = 1000 millisecond 
+  let noOfDaysBetweenTwoDates = differnceBetweenTwoDates / (24 * 60 * 60 * 1000);
+  console.log(noOfDaysBetweenTwoDates)
+  
+  
+  // Method # 02 (Short approach 1 Liner)
+  // let noOfDaysBetweenTwoDates = Math.abs(new Date(strtDate) - new Date(endDate).getTime()) / (24 * 60 * 60 * 1000);
+  // console.log(noOfDaysBetweenTwoDates)
+  }
+  console.log(findDaysBetweenTwoDates("2024-01-01","2024-01-31"))
 
   
