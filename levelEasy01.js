@@ -560,6 +560,7 @@ const convertObjectToArray = (obj) =>{
 //     )
 
 // -------------------------------------------------- Write a Function to Calculate Intrest --------------------------------------------------
+// Question # 17
 const calculateSimpleIntrest = (principleAmount,rateOfIntrestPerAnum,timeInYear) =>{
   const simpleIntrest = (principleAmount * rateOfIntrestPerAnum * timeInYear) / 100
   return simpleIntrest
