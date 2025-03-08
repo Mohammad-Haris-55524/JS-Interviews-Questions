@@ -13,6 +13,15 @@ const removeDuplicates = (arr) =>{
     console.log(removeDuplicates([1, 1, 2, 3, 4, 5, 4, 1]))
     // console.log(removeDuplicates(['a', 'b', 'a', 'c', 'b']))
 
+
+// Method # 02
+const arr = [1, 2, 3, 4, 4, 5, 6, 6, 7];
+const uniqueArr = arr.filter((value, index, self) => {
+  return self.indexOf(value) === index; // check if the first occurrence of value
+});
+
+console.log(uniqueArr);  // [1, 2, 3, 4, 5, 6, 7]
+
 // -----------------------------------------------------Remove Duplicacy from an String----------------------------------------------------
 // Question # 02 
 const removeDuplicatesFromStrings = (str) =>{
@@ -26,6 +35,16 @@ const removeDuplicatesFromStrings = (str) =>{
   return result;
 }
 // console.log(removeDuplicatesFromStrings("Mohammad Haris"));
+
+
+// Method # 02
+// const str = "aabbccddeeff";
+// const uniqueStr = [...str].filter((value, index, self) => {
+//   return self.indexOf(value) === index;
+// }).join('');
+
+// console.log(uniqueStr);  // "abcdef"
+
 
 // ****************************************Find the Longest string in a STRING **************************************************
 // Question # 03
