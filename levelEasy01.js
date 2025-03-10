@@ -115,6 +115,25 @@ const reverAString = (str) => {
 // console.log("The minimum value is: ",findMin([2,12,34,120,45,30,3]));
 
 
+
+//--------------------------------------------- Find the Second Largest Number in an Array ---------------------------------------------------
+function secondLargest(arr) {
+  let uniqueArr = [...new Set(arr)]; // Remove duplicates
+  uniqueArr.sort((a, b) => b - a); // Sort in descending order
+  return uniqueArr[1] || null; // Return second largest or null if not found
+}
+
+console.log(secondLargest([10, 5, 20, 20, 8])); // 10
+
+//--------------------------------------------------------- Check for Anagram ----------------------------------------------------------------
+function isAnagram(str1, str2) {
+  return str1.split("").sort().join("") === str2.split("").sort().join("");
+}
+
+console.log(isAnagram("listen", "silent")); // true
+console.log(isAnagram("hello", "world"));   // false
+
+
 //--------------------------------------------- CHECK A STRING or Number IS PALINDROM OR NOT -------------------------------------------------
 // Question # 04:
 // let userInput = prompt("Enter any string");
