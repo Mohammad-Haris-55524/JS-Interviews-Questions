@@ -134,6 +134,17 @@ console.log(isAnagram("listen", "silent")); // true
 console.log(isAnagram("hello", "world"));   // false
 
 
+//---------------------------------------------------- Find Missing Number in an Array ------------------------------------------------------
+function findMissingNumber(arr) {
+  let n = arr.length + 1;
+  let sum = (n * (n + 1)) / 2;
+  let arrSum = arr.reduce((acc, num) => acc + num, 0);
+  return sum - arrSum;
+}
+
+console.log("Output for missing numebr in an array: ",findMissingNumber([1, 2, 4, 5, 6])); // 3
+
+
 //--------------------------------------------- CHECK A STRING or Number IS PALINDROM OR NOT -------------------------------------------------
 // Question # 04:
 // let userInput = prompt("Enter any string");
