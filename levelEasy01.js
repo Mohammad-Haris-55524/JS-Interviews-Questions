@@ -145,6 +145,22 @@ function findMissingNumber(arr) {
 console.log("Output for missing numebr in an array: ",findMissingNumber([1, 2, 4, 5, 6])); // 3
 
 
+
+
+//--------------------------------------------- Convert a Number to Roman Numerals -------------------------------------------------
+function toRoman(num) {
+  let map = {1000:"M", 900:"CM", 500:"D", 400:"CD", 100:"C", 90:"XC", 50:"L", 40:"XL", 10:"X", 9:"IX", 5:"V", 4:"IV", 1:"I"};
+  return Object.keys(map).reverse().reduce((acc, key) => {
+      while (num >= key) { acc += map[key]; num -= key; }
+      return acc;
+  }, "");
+}
+
+console.log(toRoman(58)); // "LVIII"
+
+
+
+
 //--------------------------------------------- CHECK A STRING or Number IS PALINDROM OR NOT -------------------------------------------------
 // Question # 04:
 // let userInput = prompt("Enter any string");
