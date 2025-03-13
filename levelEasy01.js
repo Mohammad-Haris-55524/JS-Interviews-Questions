@@ -393,7 +393,7 @@ const calculateMean = (arr) => {
       
 
 
-// ------------------------------------- Write a function to find the occurences of vowels from a sentence -----------------------------------
+// ---------------------------------- Write a function to find the occurences or Count of vowels from a sentence ------------------------------
 // Question # 11
 // _____________________________________________ Remember: USE METHOD 02 & 03 & 04 ARE BEST APPROACH _________________________________________
 const occurencesOfVowelsInSentences = (str) =>{
@@ -640,3 +640,23 @@ const calculateSquareOfArray = (arr) =>{
   }
   
   console.log("Sum of array after sqauring the array numbers: ", calculateSquareOfArray([1,2,3])) 
+
+
+// -------------------------------------------------------- OTP Generation and Validation ----------------------------------------------------
+// Function to generate a 6-digit OTP
+function generateOTP() {
+  return Math.floor(100000 + Math.random() * 900000).toString();
+}
+
+// Function to validate OTP
+function validateOTP(userInput, generatedOTP) {
+  return userInput === generatedOTP;
+}
+
+// Example Usage
+const otp = generateOTP();  // Generates a random OTP
+console.log("Generated OTP:", otp);
+
+const userEnteredOTP = "123456";  // Simulating user input
+console.log("Is OTP valid?", validateOTP(userEnteredOTP, otp)); 
+
