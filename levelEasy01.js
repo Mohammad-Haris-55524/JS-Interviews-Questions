@@ -660,3 +660,19 @@ console.log("Generated OTP:", otp);
 const userEnteredOTP = "123456";  // Simulating user input
 console.log("Is OTP valid?", validateOTP(userEnteredOTP, otp)); 
 
+
+// -------------------------------------------------- Sorting an Array of Objects by a Given Key ----------------------------------------------
+function sortByKey(arr, key) {
+  return [...arr].sort((a, b) => (a[key] > b[key] ? 1 : -1));
+}
+
+// Example usage
+const people = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 30 },
+  { name: "Charlie", age: 20 }
+];
+
+console.log(sortByKey(people, "age"));
+
+
