@@ -676,3 +676,11 @@ const people = [
 console.log(sortByKey(people, "age"));
 
 
+// --------------------------------------- Implement a function that can efficiently merge two sorted arrays.  -------------------------------
+function mergeSortedArrays(arr1, arr2) { 
+
+  return [...arr1, ...arr2].sort((a,b) => a - b);
+
+} 
+console.log("Sorted merged array: ",mergeSortedArrays([2,3,1,5,4],[10,11,54,21,9]))
+
