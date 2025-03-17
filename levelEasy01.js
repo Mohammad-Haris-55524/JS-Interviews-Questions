@@ -684,3 +684,12 @@ function mergeSortedArrays(arr1, arr2) {
 } 
 console.log("Sorted merged array: ",mergeSortedArrays([2,3,1,5,4],[10,11,54,21,9]))
 
+
+// ------------------------------------------------- Find the Intersection of Two Arrays  ----------------------------------------------------
+
+// Question: Return an array of common elements from two given arrays.
+function arrayIntersection(arr1, arr2) {
+  return arr1.filter(item => arr2.includes(item));
+}
+
+console.log(arrayIntersection([1, 2, 3], [2, 3, 4])); // [2, 3]
