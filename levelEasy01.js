@@ -708,3 +708,16 @@ console.log(isPrime(7)); // true
 console.log(isPrime(10)); // false
 
 
+// -------------------------------------------- Find the First Non-Repeating Character in a String  ------------------------------------------
+
+function firstUniqueChar(str) {
+  for (let char of str) {
+      if (str.indexOf(char) === str.lastIndexOf(char)) return char;
+  }
+  return null;
+}
+
+console.log(firstUniqueChar("aabbccd")); // "d"
+
+
+
