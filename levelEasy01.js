@@ -117,6 +117,7 @@ const reverAString = (str) => {
 
 
 //--------------------------------------------- Find the Second Largest Number in an Array ---------------------------------------------------
+// Method # 01
 function secondLargest(arr) {
   let uniqueArr = [...new Set(arr)]; // Remove duplicates
   uniqueArr.sort((a, b) => b - a); // Sort in descending order
@@ -124,6 +125,16 @@ function secondLargest(arr) {
 }
 
 console.log(secondLargest([10, 5, 20, 20, 8])); // 10
+
+
+// Method # 02
+function secondLargest(arr) {
+  let uniqueArr = [...new Set(arr)].sort((a, b) => b - a);
+  return uniqueArr.length > 1 ? uniqueArr[1] : null;
+}
+
+console.log(secondLargest([10, 45, 2, 89, 32, 89])); // 45
+
 
 //--------------------------------------------------------- Check for Anagram ----------------------------------------------------------------
 function isAnagram(str1, str2) {
