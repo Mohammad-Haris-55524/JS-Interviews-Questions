@@ -50,3 +50,43 @@ fetchData();
 // Final Verdict:
 // 🟢 Use try...catch with async/await for cleaner and more readable code! 🚀
 
+
+// ------------------------------------------------------------------------------------------------------------------------------------------
+// ------------------------------- Promise Chaining in JavaScript – Detailed Explanation with Examples 🚀 ----------------------------------
+// ------------------------------------------------------------------------------------------------------------------------------------------
+// What is Promise Chaining?
+// Promise chaining is a technique where multiple asynchronous operations (promises) are executed one after another. Each .then() receives the 
+// result of the previous promise and returns a new promise, allowing us to avoid callback hell.
+
+// Basic Promise Chaining Example
+// function fetchData() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("Step 1: Data fetched");
+//         }, 1000);
+//     });
+// }
+
+// fetchData()
+//     .then(result => {
+//         console.log(result);
+//         return "Step 2: Process data"; // Returning value automatically wraps it in a resolved Promise
+//     })
+//     .then(result => {
+//         console.log(result);
+//         return "Step 3: Save data to DB";
+//     })
+//     .then(result => {
+//         console.log(result);
+//     })
+//     .catch(error => {
+//         console.error("Error:", error);
+//     });
+
+// Explanation:
+// fetchData() returns a Promise that resolves after 1 second.
+// The first .then() logs "Step 1: Data fetched" and returns another string.
+// The second .then() logs "Step 2: Process data" and returns another string.
+// The third .then() logs "Step 3: Save data to DB".
+// If any error occurs, the .catch() block handles it.
+// 📌 Each .then() gets the resolved value of the previous .then() and returns a new value.
