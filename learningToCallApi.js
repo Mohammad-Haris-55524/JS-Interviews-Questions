@@ -37,3 +37,16 @@ function fetchData() {
 }
 
 fetchData();
+
+
+
+// How It Works:
+// ✅ Uses .then() to handle the API response.
+
+// ✅ Uses .catch() to catch and handle errors.
+
+// ✅ Throws an error manually if response.ok is false.
+
+// Final Verdict:
+// 🟢 Use try...catch with async/await for cleaner and more readable code! 🚀
+
