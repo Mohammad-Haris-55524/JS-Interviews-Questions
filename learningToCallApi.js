@@ -90,3 +90,43 @@ fetchData();
 // The third .then() logs "Step 3: Save data to DB".
 // If any error occurs, the .catch() block handles it.
 // 📌 Each .then() gets the resolved value of the previous .then() and returns a new value.
+
+
+
+
+// --------------------------------------- Promise Chaining with setTimeout (Simulating Async Calls) ------------------------------------------
+// function step1() {
+//     return new Promise(resolve => setTimeout(() => resolve("Step 1 Complete"), 1000));
+// }
+
+// function step2() {
+//     return new Promise(resolve => setTimeout(() => resolve("Step 2 Complete"), 2000));
+// }
+
+// function step3() {
+//     return new Promise(resolve => setTimeout(() => resolve("Step 3 Complete"), 1500));
+// }
+
+// // Chain the steps
+// step1()
+//     .then(result => {
+//         console.log(result);
+//         return step2();
+//     })
+//     .then(result => {
+//         console.log(result);
+//         return step3();
+//     })
+//     .then(result => {
+//         console.log(result);
+//     })
+//     .catch(error => {
+//         console.error("Error:", error);
+//     });
+
+// Key Takeaways from This Example:
+// Each function returns a promise that resolves after a delay.
+// The next .then() waits for the previous promise to resolve before executing.
+// The order of execution is maintained without using nested callbacks.
+
+
