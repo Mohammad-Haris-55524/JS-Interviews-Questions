@@ -130,3 +130,62 @@ fetchData();
 // The order of execution is maintained without using nested callbacks.
 
 
+
+
+//------------------------------------------------------- Handling Errors in Promise Chaining ------------------------------------------------
+// If an error occurs at any step, .catch() will handle it.
+function fetchData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => reject("Error fetching data!"), 1000);
+    });
+}
+
+fetchData()
+    .then(result => {
+        console.log(result);
+        return "Processing data";
+    })
+    .catch(error => {
+        console.error("Caught Error:", error);
+        return "Recovered from error"; // Continue the chain
+    })
+    .then(result => {
+        console.log(result);
+    });
+
+// What Happens Here?
+// fetchData() rejects the promise, triggering the .catch().
+// .catch() handles the error and returns a recovery message.
+// The next .then() continues execution normally.
+
+
+// ------------------------------------------------ Promise Chaining (then and catch) vs (Async/Await) ---------------------------------------
+// Using Promise Chaining
+fetch("https://jsonplaceholder.typicode.com/todos/1")
+    .then(response => response.json())
+    .then(data => console.log("To-Do:", data))
+    .catch(error => console.error("Error:", error));
+
+// Using Async/Await (More Readable)
+async function getTodo() {
+    try {
+        let response = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+        let data = await response.json();
+        console.log("To-Do:", data);
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+getTodo();
+// 📌 async/await makes code more readable but works the same as promise chaining!
+
+// Final Thoughts on Promise Chaining
+// ✅ Helps execute multiple asynchronous tasks in sequence.
+// ✅ Prevents callback hell by keeping the code flat & readable.
+// ✅ .catch() handles errors for the entire chain.
+// ✅ Returning a new promise in .then() allows further chaining.
+// ✅ async/await is a cleaner alternative but internally uses promises.
+
+
+
+
