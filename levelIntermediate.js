@@ -324,6 +324,32 @@ const findDaysBetweenTwoDates = (strtDate, endDate) =>{
   console.log(findDaysBetweenTwoDates("2024-01-01","2024-01-31"))
 
 
-  
+  // --------------------------------------------------- LCM Function in JavaScript ---------------------------------------------------------
+  // Function to find the GCD (Greatest Common Divisor) using Euclidean Algorithm
+function gcd(a, b) {
+  return b === 0 ? a : gcd(b, a % b);
+}
+
+// Function to find the LCM (Least Common Multiple)
+function lcm(a, b) {
+  return Math.abs(a * b) / gcd(a, b);
+}
+
+// Example usage
+console.log(lcm(12, 18)); // Output: 36
+console.log(lcm(7, 5));   // Output: 35
+console.log(lcm(15, 25)); // Output: 75
+
+// ---------------------------------------------------- LCM for an Array of Numbers ----------------------------------------------------------
+// If you need to find the LCM of multiple numbers, you can extend the function like this:
+
+function lcmArray(arr) {
+  return arr.reduce((acc, num) => lcm(acc, num), 1);
+}
+
+// Example usage
+console.log(lcmArray([4, 6, 8])); // Output: 24
+console.log(lcmArray([5, 10, 15])); // Output: 30
+// This approach uses reduce() to find the LCM of multiple numbers.
 
   
