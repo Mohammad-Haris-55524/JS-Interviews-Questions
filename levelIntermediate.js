@@ -352,4 +352,24 @@ console.log(lcmArray([4, 6, 8])); // Output: 24
 console.log(lcmArray([5, 10, 15])); // Output: 30
 // This approach uses reduce() to find the LCM of multiple numbers.
 
+
+// -------------------------------------------------------- Finding HCF (GCD) in JavaScript --------------------------------------------------
+// The Highest Common Factor (HCF), also known as the Greatest Common Divisor (GCD), is the largest number that divides two or more numbers 
+// without leaving a remainder.
+
+// 1️⃣ Using Euclidean Algorithm (Best Approach)
+// The Euclidean Algorithm efficiently finds the GCD by using:
+
+// GCD(a,b)=GCD(b,a modb)
+
+// Function to find the HCF (GCD) using the Euclidean algorithm
+function hcf(a, b) {
+  return b === 0 ? a : hcf(b, a % b);
+}
+
+// Example usage
+console.log(hcf(24, 36)); // Output: 12
+console.log(hcf(15, 25)); // Output: 5
+console.log(hcf(7, 13));  // Output: 1 (since they are co-prime)
+
   
