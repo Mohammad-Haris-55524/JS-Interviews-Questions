@@ -731,4 +731,40 @@ function firstUniqueChar(str) {
 console.log(firstUniqueChar("aabbccd")); // "d"
 
 
+// ------------------------------------------------ Check a given number is ODD or EVEN  ----------------------------------------------------
+
+const checkEvenOrOdd = (num) =>{
+if(num < 0) return false
+if(num % 2 === 0) {
+  return `${num} is an EVEN number`
+}
+else{
+   return `${num} is an ODD number`
+}
+}
+
+console.log(checkEvenOrOdd(3))
+
+
+// ---------------------------------------------------- Learning about this keyward  --------------------------------------------------------
+
+// Create an object:
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  id: 5566,
+
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  },
+  
+  lastName : () => {
+    return this.firstName + " " + this.lastName;
+  }
+};
+console.log(person.fullName())
+console.log(person.lastName())
+
+
+
 
