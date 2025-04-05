@@ -58,3 +58,50 @@
 // Uses hoisting - moves declarations to top (but not assignments)
 // Has a call stack to manage function calls
 // Each function call creates a new execution context
+
+
+
+// -------------------------------------- Global Execution Context in JavaScript - Simple Explanation ----------------------------------------
+// 1. When is the Global Execution Context Created?
+
+// ✅ Answer: The Global Execution Context (GEC) is created as soon as the JavaScript engine starts executing your script, even before any 
+// code runs.
+// Before Execution: The JS engine first sets up the GEC (memory allocation phase).
+// During Execution: The engine runs the code line by line inside this GEC.
+
+// 🔹 Hint Answer:
+// "The Global Execution Context is created before the JavaScript engine starts executing the actual code. It’s the first thing that happens
+//  when a script loads."
+
+
+// 2. What is the Global Execution Context (GEC)?
+
+// It is the default environment where your JavaScript code runs.
+// It represents the global scope (like the window object in browsers or global in Node.js).
+// All top-level code (code not inside any function) runs here.
+// It manages variables and functions declared globally.
+
+// 🔹 Example:
+var name = "Alice"; // Global variable (part of GEC)
+function greet() {  // Global function (part of GEC)
+    console.log("Hello, " + name);
+}
+greet(); // Function call (executed inside GEC)
+
+
+// 3. Why Do We Need the Global Execution Context?
+
+// The GEC is essential because:
+// Memory Allocation (Hoisting)
+// Before running code, JS scans it and allocates memory for:
+// Variables (var declarations get undefined initially).
+// Functions (stored entirely in memory).
+console.log(name); // undefined (hoisted but not assigned yet)
+var name = "Bob";  
+greet(); // Works even if called before declaration (hoisting)
+function greet() { console.log("Hi!"); }
+
+// Execution Order Management
+// JS is single-threaded, so the GEC helps track which code runs first.
+// Handling Function Calls
+// When a function is called, a new execution context is created and pushed onto the call stack.
