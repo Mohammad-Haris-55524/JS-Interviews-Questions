@@ -357,7 +357,7 @@ console.log(lcmArray([5, 10, 15])); // Output: 30
 // The Highest Common Factor (HCF), also known as the Greatest Common Divisor (GCD), is the largest number that divides two or more numbers 
 // without leaving a remainder.
 
-// 1️⃣ Using Euclidean Algorithm (Best Approach)
+// 1️⃣ ************ Using Euclidean Algorithm (Best Approach)*******************
 // The Euclidean Algorithm efficiently finds the GCD by using:
 
 // GCD(a,b)=GCD(b,a modb)
@@ -371,5 +371,40 @@ function hcf(a, b) {
 console.log(hcf(24, 36)); // Output: 12
 console.log(hcf(15, 25)); // Output: 5
 console.log(hcf(7, 13));  // Output: 1 (since they are co-prime)
+
+
+// ********************** 2️⃣ HCF of Multiple Numbers (Array) ********************
+// To find the HCF of an array of numbers, use reduce():
+function hcfArray(arr) {
+  return arr.reduce((acc, num) => hcf(acc, num));
+}
+
+// Example usage
+console.log(hcfArray([12, 18, 24])); // Output: 6
+console.log(hcfArray([50, 100, 150])); // Output: 50
+console.log(hcfArray([7, 13, 19])); // Output: 1 (co-prime numbers)
+
+
+
+//************************* Alternate Naive Approach (Less Efficient) ****************
+function hcfNaive(a, b) {
+  let min = Math.min(a, b);
+  for (let i = min; i >= 1; i--) {
+      if (a % i === 0 && b % i === 0) {
+          return i;
+      }
+  }
+  return 1;
+}
+
+// Example usage
+console.log(hcfNaive(24, 36)); // Output: 12
+console.log(hcfNaive(15, 25)); // Output: 5
+
+
+
+
+
+
 
   
