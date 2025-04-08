@@ -65,3 +65,31 @@ doSomethingLater(() => {
 
 
 
+// 🧩--------------------------- Callback in Array Methods -----------------------------------
+const numbers = [1, 2, 3];
+
+numbers.forEach(function (num) {
+    console.log(num * 2); // Callback called for each item
+});
+
+// 😩 Callback Hell (Why Promises Were Born)
+
+// If you nest too many callbacks, code becomes messy:
+doStep1(function () {
+    doStep2(function () {
+        doStep3(function () {
+            console.log("All steps done!");
+        });
+    });
+});
+// This is called Callback Hell 🔥, and this is why we prefer Promises and async/await now.
+
+// ✅ Summary:
+// Feature	                Explanation
+// Callback	                A function passed into another function to run later
+// Why use?	                Handle async tasks (like API calls, timeouts)
+// Do we still use it?	    Yes, but often replaced with Promises or async/await
+// Problems?	            Can get messy if deeply nested (callback hell)
+
+
+
