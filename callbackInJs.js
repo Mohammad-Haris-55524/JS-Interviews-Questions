@@ -68,9 +68,44 @@ doSomethingLater(() => {
 // 🧩--------------------------- Callback in Array Methods -----------------------------------
 const numbers = [1, 2, 3];
 
+// (Normal function)
 numbers.forEach(function (num) {
     console.log(num * 2); // Callback called for each item
 });
+// Arrow function? (Same above thing, just shorter)
+numbers.forEach((num) => {
+    console.log(num * 2); // Still a callback function
+});
+// ✅ This arrow function is also a callback function, passed into .forEach().
+
+
+// 🔁 What is forEach doing with it?
+// .forEach() goes through each item in the numbers array one by one, and:
+// calls your callback
+// and passes each array element (num) into it
+// So the flow is like:
+// Behind the scenes (simplified)
+for (let i = 0; i < numbers.length; i++) {
+    const num = numbers[i];
+    callback(num); // <-- calling the callback
+}
+
+
+// ✅ Where is the callback function in above normal function (line 71) ?
+// Question arises:- Iss above forEach waly code my callback functions kahaan hay ?
+// Answer: 
+function (num) {
+    console.log(num * 2);
+}
+
+// This function is passed as an argument to .forEach() — and that’s what makes it a callback function. 💡
+
+
+
+
+
+
+
 
 // 😩 Callback Hell (Why Promises Were Born)
 
