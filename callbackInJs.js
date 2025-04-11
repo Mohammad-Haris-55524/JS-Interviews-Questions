@@ -107,7 +107,7 @@ function (num) {
 
 
 
-// 😩 Callback Hell (Why Promises Were Born)
+//-------------------------------------------------- 😩 Callback Hell (Why Promises Were Born) ----------------------------------------------
 
 // If you nest too many callbacks, code becomes messy:
 doStep1(function () {
@@ -118,6 +118,66 @@ doStep1(function () {
     });
 });
 // This is called Callback Hell 🔥, and this is why we prefer Promises and async/await now.
+
+//____________________________________________ 💡 Real-World Example: Callback Hell with API Calls ___________________________________________
+// Let’s say we want to:
+
+// Log in the user
+// Get the user's profile info
+// Fetch their posts
+
+// And let’s simulate it using setTimeout() (to mimic API delay):
+
+function loginUser(username, callback) {
+    setTimeout(() => {
+        console.log("User logged in:", username);
+        callback({ userId: 1 });
+    }, 1000);
+}
+
+function getUserProfile(userId, callback) {
+    setTimeout(() => {
+        console.log("Fetched profile for userId:", userId);
+        callback({ name: "Zara", age: 25 });
+    }, 1000);
+}
+
+function getUserPosts(userId, callback) {
+    setTimeout(() => {
+        console.log("Fetched posts for userId:", userId);
+        callback(["Post 1", "Post 2", "Post 3"]);
+    }, 1000);
+}
+
+// 🔥 CALLBACK HELL:
+loginUser("zara123", function (user) {
+    getUserProfile(user.userId, function (profile) {
+        console.log("Profile:", profile);
+        getUserPosts(user.userId, function (posts) {
+            console.log("Posts:", posts);
+        });
+    });
+});
+
+// 🧠 Let’s Understand the Flow:
+// loginUser simulates an API call → when done, it calls the callback with a userId.
+// Inside that callback, we call getUserProfile → another async task.
+// Inside that, we call getUserPosts.
+
+// Each one is nested inside the previous one, creating this deep pyramid shape:
+// loginUser
+//    ↳ getUserProfile
+//        ↳ getUserPosts
+
+
+//>>>>>>>>>>>>>>>>>>>>>> 🛠 How to Fix Callback Hell? (Sneak Peek) <<<<<<<<<<<<<<<<<<<<<<<
+// You can flatten this using:
+// ✅ Promises
+// ✅ Async/Await (most modern approach)
+
+
+
+
 
 // ✅ Summary:
 // Feature	                Explanation
