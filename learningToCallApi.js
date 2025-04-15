@@ -188,4 +188,64 @@ getTodo();
 
 
 
+// ✅ Realistic async/await Example
+
+// ✅ Scenario: When One API Depends on Another
+// Let’s say you:
+// First log in a user
+// Then fetch their profile info
+// Then load their posts
+// Each API call depends on the result of the previous one.
+
+
+
+// Simulate API functions
+function loginUser() {
+    return new Promise(resolve => {
+        setTimeout(() => resolve({ id: 1, username: "zara123" }), 1000);
+    });
+}
+
+function getUserProfile(userId) {
+    return new Promise(resolve => {
+        setTimeout(() => resolve({ id: userId, name: "Zara", age: 25 }), 1000);
+    });
+}
+
+function getUserPosts(userId) {
+    return new Promise(resolve => {
+        setTimeout(() => resolve(["Post 1", "Post 2", "Post 3"]), 1000);
+    });
+}
+
+// ✅ async/await version
+async function fetchUserDataFlow() {
+    try {
+        const user = await loginUser(); // Step 1
+        console.log("User Logged In:", user);
+
+        const profile = await getUserProfile(user.id); // Step 2
+        console.log("User Profile:", profile);
+
+        const posts = await getUserPosts(user.id); // Step 3
+        console.log("User Posts:", posts);
+    } catch (error) {
+        console.error("Something went wrong!", error);
+    }
+}
+
+fetchUserDataFlow();
+
+// 💡 Why is async/await better for this?
+
+// Feature	Promises	Async/Await
+// Readability	Can be messy if not chained cleanly	✅ Looks like simple top-down code
+// Error handling	.catch() at the end	✅ try...catch like synchronous code
+// Beginner-friendly	Medium	✅ Very easy to follow
+// Nesting	Less, but still some if not handled well	✅ No nesting at all
+
+
+
+
+
 
