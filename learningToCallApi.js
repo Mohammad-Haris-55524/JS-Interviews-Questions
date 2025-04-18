@@ -290,6 +290,24 @@ async function fetchUserAndPosts() {
 
 fetchUserAndPosts();
 
+// 🧠 What's Happening?
+
+// Step                                     | What it does
+// fetch(".../users/1")                     | Calls API to get the user with ID 1
+// await userResponse.json()                | Converts the response to JSON
+// fetch(".../posts?userId=1")              | Uses the user.id to get all posts
+// console.log(posts)                       | Logs the posts related to the user// ✅ Why this pattern is best:
+
+// ------------------------------------------------ 🔐 Why async/await Makes it Easy: ------------------------------------------------------
+// Looks like step-by-step code
+// Avoids callback hell
+// Easier error handling with try/catch
+// Great for dependent API calls like this example
+
+
+
+
+
 
 
 
